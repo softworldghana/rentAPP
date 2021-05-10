@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}New Rent Details{% endblock %}
+
+{% block content %} 
+  <div>.</div>
+  <div>.</div>
+  <div>.</div>
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">New Rent Details</span>
+    <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item">
+        <a href="/rent" class="nav-link waves-effect">
+          <i class="fa fa-list-ol"></i>
+          <span class="clearfix d-none d-sm-inline-block"> Rent List </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <p></p>
+  <div class="content-section">
+    <div class="container-fluid">
+        <form method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            {{ form|crispy }}
+          </fieldset>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Tenant Name*</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="tenant name">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Property Name*</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save Details</button>
+          </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}

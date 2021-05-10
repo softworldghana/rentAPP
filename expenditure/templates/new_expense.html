@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{% load crispy_forms_tags %}
+
+{% block title %}New Expense{% endblock %}
+
+{% block content %} 
+  <div>.</div>
+  <div>.</div>
+  <div>.</div>
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">New Expense</span>
+    <ul class="navbar-nav nav-flex-icons">
+      <li class="nav-item">
+        <a href="/expenses" class="nav-link waves-effect">
+          <i class="fa fa-list-ol"></i>
+          <span class="clearfix d-none d-sm-inline-block"> Expenditure List </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <p></p>
+  <div class="content-section">
+    <div class="container-fluid">
+        <form method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            {{ form|crispy }}
+          </fieldset>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+    </div>
+  </div>
+{% endblock %}
